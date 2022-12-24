@@ -1,0 +1,82 @@
+Added Component: Designator=C1(RAD-0.1)
+Added Component: Designator=C2(RAD-0.1)
+Added Component: Designator=C5(SMC7343P)
+Added Component: Designator=D2(SMC)
+Added Component: Designator=IN(Rosita2)
+Added Component: Designator=L2(L125)
+Added Component: Designator=OUT(Rosita2)
+Added Component: Designator=PRG(HDR1X5)
+Added Component: Designator=Q1(TO-220AB)
+Added Component: Designator=Q2(29-04)
+Added Component: Designator=R1(AXIAL-0.4)
+Added Component: Designator=R2(AXIAL-0.4)
+Added Component: Designator=R3(AXIAL-0.4)
+Added Component: Designator=R4(AXIAL-0.4)
+Added Component: Designator=R5(AXIAL-0.4)
+Added Component: Designator=U1(PDIP600-P40)
+Added Component: Designator=Y1(CrystalClock)
+Added Pin To Net: NetName=FEEDBACK Pin=R3-1
+Added Pin To Net: NetName=FEEDBACK Pin=R4-2
+Added Pin To Net: NetName=FEEDBACK Pin=U1-3
+Added Net: Name=FEEDBACK
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=GND Pin=IN-1
+Added Pin To Net: NetName=GND Pin=OUT-2
+Added Pin To Net: NetName=GND Pin=PRG-3
+Added Pin To Net: NetName=GND Pin=Q1-3
+Added Pin To Net: NetName=GND Pin=Q2-3
+Added Pin To Net: NetName=GND Pin=R4-1
+Added Pin To Net: NetName=GND Pin=U1-12
+Added Pin To Net: NetName=GND Pin=U1-31
+Added Net: Name=GND
+Added Pin To Net: NetName=MCLR Pin=PRG-1
+Added Net: Name=MCLR
+Added Pin To Net: NetName=NetC5_1 Pin=C5-1
+Added Pin To Net: NetName=NetC5_1 Pin=D2-2
+Added Pin To Net: NetName=NetC5_1 Pin=OUT-1
+Added Pin To Net: NetName=NetC5_1 Pin=R3-2
+Added Net: Name=NetC5_1
+Added Pin To Net: NetName=NetD2_1 Pin=D2-1
+Added Pin To Net: NetName=NetD2_1 Pin=L2-2
+Added Pin To Net: NetName=NetD2_1 Pin=Q1-2
+Added Net: Name=NetD2_1
+Added Pin To Net: NetName=NetQ1_1 Pin=Q1-1
+Added Pin To Net: NetName=NetQ1_1 Pin=Q2-1
+Added Pin To Net: NetName=NetQ1_1 Pin=R2-1
+Added Net: Name=NetQ1_1
+Added Pin To Net: NetName=NetQ2_2 Pin=Q2-2
+Added Pin To Net: NetName=NetQ2_2 Pin=R1-2
+Added Net: Name=NetQ2_2
+Added Pin To Net: NetName=NetR5_1 Pin=R5-1
+Added Pin To Net: NetName=NetR5_1 Pin=U1-1
+Added Net: Name=NetR5_1
+Added Pin To Net: NetName=OSC0 Pin=C1-2
+Added Pin To Net: NetName=OSC0 Pin=U1-13
+Added Pin To Net: NetName=OSC0 Pin=Y1-1
+Added Net: Name=OSC0
+Added Pin To Net: NetName=OSC1 Pin=C2-2
+Added Pin To Net: NetName=OSC1 Pin=U1-14
+Added Pin To Net: NetName=OSC1 Pin=Y1-2
+Added Net: Name=OSC1
+Added Pin To Net: NetName=PGC Pin=PRG-4
+Added Pin To Net: NetName=PGC Pin=U1-39
+Added Net: Name=PGC
+Added Pin To Net: NetName=PGD Pin=PRG-5
+Added Pin To Net: NetName=PGD Pin=U1-40
+Added Net: Name=PGD
+Added Pin To Net: NetName=PWM Pin=R1-1
+Added Pin To Net: NetName=PWM Pin=U1-17
+Added Net: Name=PWM
+Added Pin To Net: NetName=SIGNAL Pin=U1-2
+Added Net: Name=SIGNAL
+Added Pin To Net: NetName=VCC Pin=IN-2
+Added Pin To Net: NetName=VCC Pin=L2-1
+Added Pin To Net: NetName=VCC Pin=PRG-2
+Added Pin To Net: NetName=VCC Pin=R2-2
+Added Pin To Net: NetName=VCC Pin=R5-2
+Added Pin To Net: NetName=VCC Pin=U1-11
+Added Pin To Net: NetName=VCC Pin=U1-32
+Added Net: Name=VCC
+Added Class: Name=BOOSTController

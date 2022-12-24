@@ -1,0 +1,43 @@
+Added Component: Designator=C1(SMC7343P)
+Added Component: Designator=C2(SMC7343P)
+Added Component: Designator=C3(RAD-0.1)
+Added Component: Designator=C4(RAD-0.1)
+Added Component: Designator=D2(SMC)
+Added Component: Designator=IN(Rosita2)
+Added Component: Designator=L2(L125)
+Added Component: Designator=OUT(Rosita2)
+Added Component: Designator=POT(POT - Blue)
+Added Component: Designator=R1(AXIAL-0.4)
+Added Component: Designator=XL6009(XL6009)
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=GND Pin=C4-1
+Added Pin To Net: NetName=GND Pin=IN-2
+Added Pin To Net: NetName=GND Pin=OUT-2
+Added Pin To Net: NetName=GND Pin=R1-1
+Added Pin To Net: NetName=GND Pin=XL6009-1
+Added Net: Name=GND
+Added Pin To Net: NetName=NetC1_1 Pin=C1-1
+Added Pin To Net: NetName=NetC1_1 Pin=C4-2
+Added Pin To Net: NetName=NetC1_1 Pin=IN-1
+Added Pin To Net: NetName=NetC1_1 Pin=L2-1
+Added Pin To Net: NetName=NetC1_1 Pin=XL6009-2
+Added Pin To Net: NetName=NetC1_1 Pin=XL6009-4
+Added Net: Name=NetC1_1
+Added Pin To Net: NetName=NetC2_1 Pin=C2-1
+Added Pin To Net: NetName=NetC2_1 Pin=C3-2
+Added Pin To Net: NetName=NetC2_1 Pin=D2-2
+Added Pin To Net: NetName=NetC2_1 Pin=OUT-1
+Added Pin To Net: NetName=NetC2_1 Pin=POT-2
+Added Pin To Net: NetName=NetC2_1 Pin=POT-3
+Added Net: Name=NetC2_1
+Added Pin To Net: NetName=NetD2_1 Pin=D2-1
+Added Pin To Net: NetName=NetD2_1 Pin=L2-2
+Added Pin To Net: NetName=NetD2_1 Pin=XL6009-3
+Added Pin To Net: NetName=NetD2_1 Pin=XL6009-6
+Added Net: Name=NetD2_1
+Added Pin To Net: NetName=NetPOT_1 Pin=POT-1
+Added Pin To Net: NetName=NetPOT_1 Pin=XL6009-5
+Added Net: Name=NetPOT_1
+Added Class: Name=BOOSTController2
