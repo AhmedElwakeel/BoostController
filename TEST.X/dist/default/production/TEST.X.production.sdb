@@ -1,0 +1,569 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16LF877A ]
+[d frameptr 0 ]
+"3 D:\BoostController\TEST.X\ADC.c
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+"12
+[v _ADC_GetAdcValue ADC_GetAdcValue `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"417 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\doprnt.c
+[v _fround fround `(d  1 s 4 fround ]
+"433
+[v _scale scale `(d  1 s 4 scale ]
+"505
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"60 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fldivl.c
+[v __div_to_l_ _div_to_l_ `(ul  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"43 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"60 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\ftdivl.c
+[v __tdiv_to_l_ _tdiv_to_l_ `(ul  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\memset.c
+[v _memset memset `(*.5v  1 e 1 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"242
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"6 D:\BoostController\TEST.X\LCD.c
+[v _LCD_Enable LCD_Enable `(v  1 e 1 0 ]
+"13
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+"34
+[v _Lcd_CmdWrite Lcd_CmdWrite `(v  1 e 1 0 ]
+"51
+[v _Lcd_DataWrite Lcd_DataWrite `(v  1 e 1 0 ]
+"64
+[v _LCD_GoToXY LCD_GoToXY `(v  1 e 1 0 ]
+"76
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
+"80
+[v _LCD_Print LCD_Print `(v  1 e 1 0 ]
+"13 D:\BoostController\TEST.X\main.c
+[v _main main `(i  1 e 2 0 ]
+"10 D:\BoostController\TEST.X\PWM.c
+[v _PWM_Init PWM_Init `(v  1 e 1 0 ]
+"49
+[v _PWM_SetDutyCycle PWM_SetDutyCycle `(v  1 e 1 0 ]
+"79
+[v _PWM_Start PWM_Start `(v  1 e 1 0 ]
+"3 D:\BoostController\TEST.X\Uart.c
+[v _UART_Init UART_Init `(v  1 e 1 0 ]
+"12
+[v _UART_TxChar UART_TxChar `(v  1 e 1 0 ]
+"27
+[v _UART_SendTxt UART_SendTxt `(v  1 e 1 0 ]
+"340 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16lf877a.h
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"892
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"906
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"964
+[v _RCSTA RCSTA `VEuc  1 e 1 @24 ]
+"1059
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1066
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1080
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
+"1094
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1152
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1159
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+"1325
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1437
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1499
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1816
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"1999
+[v _TXSTA TXSTA `VEuc  1 e 1 @152 ]
+"2080
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2222
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2229
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"2404
+[v _ADON ADON `VEb  1 e 0 @248 ]
+"2572
+[v _GO GO `VEb  1 e 0 @250 ]
+"2575
+[v _GO_DONE GO_DONE `VEb  1 e 0 @250 ]
+"2743
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"2902
+[v _TMR2ON TMR2ON `VEb  1 e 0 @146 ]
+"3037
+[v _TXIF TXIF `VEb  1 e 0 @100 ]
+"358 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[10]ul  1 s 40 dpowers ]
+"7 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\powers.c
+[v __powers_ _powers_ `DC[13]d  1 e 52 0 ]
+"39
+[v __npowers_ _npowers_ `DC[13]d  1 e 52 0 ]
+"13 D:\BoostController\TEST.X\main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"15
+[v main@Str Str `[50]uc  1 a 50 0 ]
+"16
+[v main@FeedBack FeedBack `f  1 a 4 56 ]
+[v main@SetPoint SetPoint `f  1 a 4 52 ]
+"18
+[v main@Count Count `i  1 a 2 50 ]
+"17
+[v main@DutyCycle DutyCycle `uc  1 a 1 60 ]
+"68
+} 0
+"505 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.5uc  1 a 1 wreg ]
+"533
+[v sprintf@fval fval `d  1 a 4 38 ]
+[u S337 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
+"543
+[v sprintf@tmpval tmpval `S337  1 a 4 31 ]
+"545
+[v sprintf@val val `ul  1 a 4 25 ]
+"517
+[v sprintf@prec prec `i  1 a 2 36 ]
+"534
+[v sprintf@eexp eexp `i  1 a 2 29 ]
+"525
+[v sprintf@flag flag `us  1 a 2 23 ]
+"512
+[v sprintf@c c `uc  1 a 1 42 ]
+"507
+[v sprintf@ap ap `[1]*.4v  1 a 1 22 ]
+"505
+[v sprintf@sp sp `*.5uc  1 a 1 wreg ]
+[v sprintf@f f `*.24DCuc  1 p 1 4 ]
+"550
+[v sprintf@sp sp `*.5uc  1 a 1 35 ]
+"1567
+} 0
+"433
+[v _scale scale `(d  1 s 4 scale ]
+{
+[v scale@scl scl `c  1 a 1 wreg ]
+[v scale@scl scl `c  1 a 1 wreg ]
+"436
+[v scale@scl scl `c  1 a 1 50 ]
+"449
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 7 ]
+[v ___awdiv@dividend dividend `i  1 p 2 9 ]
+"41
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 1 ]
+"15
+} 0
+"417 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\doprnt.c
+[v _fround fround `(d  1 s 4 fround ]
+{
+[v fround@prec prec `uc  1 a 1 wreg ]
+[v fround@prec prec `uc  1 a 1 wreg ]
+"421
+[v fround@prec prec `uc  1 a 1 51 ]
+"426
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 0 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 2 ]
+"25
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 11 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 6 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 8 ]
+"30
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S535 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S540 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S543 . 4 `l 1 i 4 0 `d 1 f 4 0 `S535 1 fAsBytes 4 0 `S540 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S543  1 a 4 26 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 20 ]
+[s S612 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S615 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S612 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S615  1 a 2 30 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 25 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 24 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 19 ]
+"8
+[v ___flmul@b b `d  1 p 4 6 ]
+[v ___flmul@a a `d  1 p 4 10 ]
+"205
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 4 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
+"60
+} 0
+"60 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\ftdivl.c
+[v __tdiv_to_l_ _tdiv_to_l_ `(ul  1 e 4 0 ]
+{
+"63
+[v __tdiv_to_l_@quot quot `ul  1 a 4 0 ]
+"62
+[v __tdiv_to_l_@exp1 exp1 `uc  1 a 1 5 ]
+[v __tdiv_to_l_@cntr cntr `uc  1 a 1 4 ]
+"60
+[v __tdiv_to_l_@f1 f1 `f  1 p 4 0 ]
+[v __tdiv_to_l_@f2 f2 `f  1 p 4 4 ]
+"101
+} 0
+"60 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fldivl.c
+[v __div_to_l_ _div_to_l_ `(ul  1 e 4 0 ]
+{
+"63
+[v __div_to_l_@quot quot `ul  1 a 4 0 ]
+"62
+[v __div_to_l_@exp1 exp1 `uc  1 a 1 5 ]
+[v __div_to_l_@cntr cntr `uc  1 a 1 4 ]
+"60
+[v __div_to_l_@f1 f1 `d  1 p 4 0 ]
+[v __div_to_l_@f2 f2 `d  1 p 4 4 ]
+"101
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 2 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 1 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 4 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 0 ]
+"44
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+{
+"10
+[v ___llmod@counter counter `uc  1 a 1 9 ]
+"5
+[v ___llmod@divisor divisor `ul  1 p 4 0 ]
+[v ___llmod@dividend dividend `ul  1 p 4 4 ]
+"25
+} 0
+"43 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 61 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 60 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 51 ]
+"70
+} 0
+"242 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@a a `d  1 p 4 72 ]
+[v ___flsub@b b `d  1 p 4 76 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 71 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 70 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 69 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 68 ]
+"10
+[v ___fladd@b b `d  1 p 4 52 ]
+[v ___fladd@a a `d  1 p 4 56 ]
+"237
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+{
+[v ___flneg@f1 f1 `d  1 p 4 0 ]
+"20
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 72 ]
+[v ___flge@ff2 ff2 `d  1 p 4 76 ]
+"19
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+{
+[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
+"12
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\memset.c
+[v _memset memset `(*.5v  1 e 1 0 ]
+{
+[v memset@p1 p1 `*.5v  1 a 1 wreg ]
+"15
+[v memset@p p `*.5uc  1 a 1 6 ]
+"8
+[v memset@p1 p1 `*.5v  1 a 1 wreg ]
+[v memset@c c `i  1 p 2 0 ]
+[v memset@n n `ui  1 p 2 2 ]
+"18
+[v memset@p1 p1 `*.5v  1 a 1 5 ]
+"22
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 52 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 45 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 50 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 57 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 56 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 49 ]
+"8
+[v ___fldiv@a a `d  1 p 4 32 ]
+[v ___fldiv@b b `d  1 p 4 36 ]
+"185
+} 0
+"27 D:\BoostController\TEST.X\Uart.c
+[v _UART_SendTxt UART_SendTxt `(v  1 e 1 0 ]
+{
+[v UART_SendTxt@Str Str `*.26uc  1 p 2 1 ]
+"34
+} 0
+"12
+[v _UART_TxChar UART_TxChar `(v  1 e 1 0 ]
+{
+[v UART_TxChar@ch ch `uc  1 a 1 wreg ]
+[v UART_TxChar@ch ch `uc  1 a 1 wreg ]
+[v UART_TxChar@ch ch `uc  1 a 1 0 ]
+"17
+} 0
+"3
+[v _UART_Init UART_Init `(v  1 e 1 0 ]
+{
+[v UART_Init@baudRate baudRate `i  1 p 2 0 ]
+"9
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 9 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lldiv@divisor divisor `ul  1 p 4 0 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 4 ]
+"30
+} 0
+"79 D:\BoostController\TEST.X\PWM.c
+[v _PWM_Start PWM_Start `(v  1 e 1 0 ]
+{
+"82
+} 0
+"49
+[v _PWM_SetDutyCycle PWM_SetDutyCycle `(v  1 e 1 0 ]
+{
+[v PWM_SetDutyCycle@channel channel `uc  1 a 1 wreg ]
+[v PWM_SetDutyCycle@channel channel `uc  1 a 1 wreg ]
+[v PWM_SetDutyCycle@dutyCycle dutyCycle `uc  1 p 1 0 ]
+"51
+[v PWM_SetDutyCycle@channel channel `uc  1 a 1 3 ]
+"64
+} 0
+"10
+[v _PWM_Init PWM_Init `(v  1 e 1 0 ]
+{
+[v PWM_Init@channel channel `uc  1 a 1 wreg ]
+[v PWM_Init@channel channel `uc  1 a 1 wreg ]
+[v PWM_Init@channel channel `uc  1 a 1 2 ]
+"28
+} 0
+"80 D:\BoostController\TEST.X\LCD.c
+[v _LCD_Print LCD_Print `(v  1 e 1 0 ]
+{
+[v LCD_Print@Str Str `*.26uc  1 p 2 4 ]
+"87
+} 0
+"51
+[v _Lcd_DataWrite Lcd_DataWrite `(v  1 e 1 0 ]
+{
+[v Lcd_DataWrite@dat dat `uc  1 a 1 wreg ]
+[v Lcd_DataWrite@dat dat `uc  1 a 1 wreg ]
+"53
+[v Lcd_DataWrite@dat dat `uc  1 a 1 3 ]
+"62
+} 0
+"13
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+{
+"15
+[v LCD_Init@Commands Commands `[7]uc  1 a 7 0 ]
+"16
+[v LCD_Init@i i `i  1 a 2 7 ]
+"14
+[v LCD_Init@F1004 F1004 `[7]uc  1 s 7 F1004 ]
+"30
+} 0
+"64
+[v _LCD_GoToXY LCD_GoToXY `(v  1 e 1 0 ]
+{
+[v LCD_GoToXY@X X `uc  1 a 1 wreg ]
+[v LCD_GoToXY@X X `uc  1 a 1 wreg ]
+[v LCD_GoToXY@Y Y `uc  1 p 1 4 ]
+"66
+[v LCD_GoToXY@X X `uc  1 a 1 5 ]
+"74
+} 0
+"76
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
+{
+"79
+} 0
+"34
+[v _Lcd_CmdWrite Lcd_CmdWrite `(v  1 e 1 0 ]
+{
+[v Lcd_CmdWrite@cmd cmd `uc  1 a 1 wreg ]
+[v Lcd_CmdWrite@cmd cmd `uc  1 a 1 wreg ]
+"36
+[v Lcd_CmdWrite@cmd cmd `uc  1 a 1 3 ]
+"45
+} 0
+"6
+[v _LCD_Enable LCD_Enable `(v  1 e 1 0 ]
+{
+"11
+} 0
+"3 D:\BoostController\TEST.X\ADC.c
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+{
+"10
+} 0
+"12
+[v _ADC_GetAdcValue ADC_GetAdcValue `(ui  1 e 2 0 ]
+{
+[v ADC_GetAdcValue@var_adcChannel_u8 var_adcChannel_u8 `uc  1 a 1 wreg ]
+[v ADC_GetAdcValue@var_adcChannel_u8 var_adcChannel_u8 `uc  1 a 1 wreg ]
+"14
+[v ADC_GetAdcValue@var_adcChannel_u8 var_adcChannel_u8 `uc  1 a 1 3 ]
+"22
+} 0

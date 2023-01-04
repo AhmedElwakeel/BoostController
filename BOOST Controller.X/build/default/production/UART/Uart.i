@@ -1876,6 +1876,9 @@ void UART_Read_Text(char *Output, unsigned int length);
 char UART_Init(const long int baudrate)
 {
   uint16_t x;
+
+  TRISC=0x80;
+
   x = (16000000UL - baudrate*64)/(baudrate*64);
   if(x>255)
   {
@@ -1897,8 +1900,9 @@ char UART_Init(const long int baudrate)
 }
 void UART_Write(char data)
 {
-  while(!TRMT);
-  TXREG = data;
+    while (TXIF == 0);
+    TXREG = data;
+    while(TRMT==0);
 }
 char UART_TX_Empty()
 {
@@ -1906,8 +1910,7 @@ char UART_TX_Empty()
 }
 void UART_Write_Text(char *text)
 {
-  int i;
-  for(i=0;text[i]!='\0';i++)
+  for(int i=0;text[i]!='\0';i++)
     UART_Write(text[i]);
 }
 char UART_Data_Ready()
@@ -1921,7 +1924,6 @@ char UART_Read()
 }
 void UART_Read_Text(char *Output, unsigned int length)
 {
-  unsigned int i;
   for(int i=0;i<length;i++)
   Output[i] = UART_Read();
 }

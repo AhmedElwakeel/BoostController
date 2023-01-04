@@ -309,23 +309,45 @@ const static unsigned int dpowers[] = {1, 10, 100, 1000, 10000,
 
 
         };
+
+
+const static unsigned int hexpowers[] = {1, 0x10, 0x100, 0x1000,
+
+
+
+       };
+
+
+const static unsigned int octpowers[] = {1, 010, 0100, 01000, 010000, 0100000,
+
+
+
+
+
+
+
+       };
 # 463 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
 int
-# 505 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
-sprintf(char * sp, const char * f, ...)
+# 477 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+printf(const char * f, ...)
 {
  va_list ap;
-
-
-
-
+# 512 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
  char c;
-# 521 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+
+ int width;
+
+
+
+
+
+
  signed char prec;
 
 
 
- unsigned char flag;
+ unsigned short flag;
 # 540 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
  union {
   unsigned long vd;
@@ -345,30 +367,207 @@ sprintf(char * sp, const char * f, ...)
   if(c != '%')
 
   {
-   ((*sp++ = (c)));
+   (putch(c) );
    continue;
+  }
+
+
+  width = 0;
+
+  flag = 0;
+
+  for(;;) {
+   switch(*f) {
+
+   case '-':
+    flag |= 0x08;
+    f++;
+    continue;
+
+
+
+   case ' ':
+    flag |= 0x01;
+    f++;
+    continue;
+# 590 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+   case '#':
+    flag |= 0x800;
+    f++;
+    continue;
+
+
+   case '0':
+    flag |= 0x04;
+    f++;
+    continue;
+
+   }
+   break;
   }
 
 
 
 
-  flag = 0;
-# 661 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+
+
+  if(flag & 0x08)
+   flag &= ~0x04;
+
+
+  if(isdigit((unsigned)*f)) {
+   width = 0;
+   do {
+    width *= 10;
+       width += *f++ - '0';
+   } while(isdigit((unsigned)*f));
+
+  } else if(*f == '*') {
+   width = (*(int *)__va_arg((*(int **)ap), (int)0));
+   f++;
+
+  }
+
+
+  if(*f == '.') {
+   flag |= 0x4000;
+   f++;
+
+   if(*f == '*') {
+    prec = (*(int *)__va_arg((*(int **)ap), (int)0));
+    if (prec < 0) {
+     prec = 0;
+     flag &= ~0x4000;
+
+
+
+    }
+    f++;
+   } else
+
+   {
+    prec = 0;
+    while(isdigit((unsigned)*f)) {
+     prec *= 10;
+        prec += *f++ - '0';
+    }
+   }
+  } else {
+   prec = 0;
+
+
+
+  }
+
+
+
+
   switch(c = *f++) {
 
   case 0:
    goto alldone;
-# 723 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+# 715 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+  case 'o':
+
+   flag |= 0x40;
+
+   break;
+
+
+
   case 'd':
   case 'i':
    break;
-# 828 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
-  default:
-# 839 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+
+
+
+  case 'p':
+# 738 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+  case 'X':
+
+   flag |= 0x20;
+
+
+
+  case 'x':
+
+
+   flag |= 0x80;
+
+   break;
+
+
+
+
+  case 's':
+
+
+
+
+
+    cp = (*(const char * *)__va_arg((*(const char * **)ap), (const char *)0));
+
+
+
+
+
+   if(!cp)
+    cp = "(null)";
+
+
+
+   len = 0;
+   while(cp[len])
+    len++;
+
+
+dostring:
+
+
+   if(prec && (prec < ((int)len)))
+    len = (unsigned char)prec;
+
+
+   if(((unsigned)width) > len)
+    width -= len;
+   else
+    width = 0;
+
+   if(!(flag & 0x08))
+
+    while(width--)
+     (putch(' ') );
+
+   while(len--)
+    (putch(*cp++) );
+
+   if(flag & 0x08)
+    while(width--)
+     (putch(' ') );
+
    continue;
-# 848 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+# 810 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+  case 'c':
+# 825 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+   c = (char)(*(int *)__va_arg((*(int **)ap), (int)0));
+
+
+  default:
+
+
+   cp = (char *)&c;
+   len = 1;
+   goto dostring;
+# 843 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+  case 'u':
+   flag |= 0xC0;
+   break;
+
+
   }
-# 1279 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+# 1277 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+  if((flag & (0xC0)) == 0x00)
+
   {
 
 
@@ -383,45 +582,267 @@ sprintf(char * sp, const char * f, ...)
    }
 
   }
-# 1331 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+
+  else
+
+
+
+
+  {
+# 1312 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+    val = (*(unsigned *)__va_arg((*(unsigned **)ap), (unsigned)0));
+  }
+
+
+  if(prec == 0 && val == 0)
+   prec++;
+
+
+  switch((unsigned char)(flag & (0xC0))) {
+
+
+
+
+  case 0x00:
+
+
+  case 0xC0:
+
+
    for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
     if(val < dpowers[c])
      break;
-# 1448 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
-  {
-# 1464 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
-   if(flag & 0x03)
-    ((*sp++ = ('-')));
-# 1495 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+
+   break;
+
+
+
+
+  case 0x80:
+
+   for(c = 1 ; c != sizeof hexpowers/sizeof hexpowers[0] ; c++)
+    if(val < hexpowers[c])
+     break;
+
+   break;
+
+
+
+
+
+  case 0x40:
+
+   for(c = 1 ; c != sizeof octpowers/sizeof octpowers[0] ; c++)
+    if(val < octpowers[c])
+     break;
+
+   break;
+
+
+
   }
 
 
-  prec = c;
+  if(c < prec)
+   c = (char)prec;
+  else if(prec < c)
+   prec = c;
+
+
+  if(width && flag & 0x03)
+   width--;
+
+  if(flag & 0x4000) {
+   if(width > prec)
+    width -= prec;
+   else
+    width = 0;
+  }
+
+
+
+  if((flag & (
+
+      0x04|
+
+       (0xC0)|0x800)) == (0x40|0x800)) {
+   if(width)
+    width--;
+  } else
+
+
+
+  if((flag & ((0xC0)|0x800)) == (0x80|0x800)) {
+
+
+
+   if(width > 2)
+    width -= 2;
+   else
+    width = 0;
+  }
+
+
+
+
+  if(width > c)
+   width -= c;
+  else
+   width = 0;
+
+
+  if(flag & 0x04) {
+
+
+
+
+   if(flag & 0x03)
+    (putch('-') );
+
+
+   else
+
+
+   if(flag & 0x01)
+    (putch(' ') );
+
+
+   else if((flag & ((0xC0)|0x800)) == (0x80|0x800)) {
+    (putch('0') );
+
+    (putch(flag & 0x20 ? 'X' : 'x') );
+
+
+
+
+
+   }
+
+
+   if(width)
+    do
+     (putch('0') );
+    while(--width);
+
+  } else
+
+  {
+
+   if(width
+
+     && !(flag & 0x08)
+
+     )
+    do
+     (putch(' ') );
+    while(--width);
+
+
+
+
+
+
+   if(flag & 0x03)
+    (putch('-') );
+
+
+
+   else if(flag & 0x01)
+    (putch(' ') );
+
+
+
+   if((flag & ((0xC0)|0x800)) == (0x40|0x800))
+    (putch('0') );
+   else
+
+
+
+   if((flag & ((0xC0)|0x800)) == (0x80|0x800)) {
+
+
+
+    (putch('0') );
+
+    (putch(flag & 0x20 ? 'X' : 'x') );
+
+
+
+
+
+   }
+
+
+  }
+
+
+
 
   while(prec--) {
 
-
+   switch((unsigned char)(flag & (0xC0)))
 
    {
-# 1515 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+
+
+
+
+  case 0x00:
+
+
+  case 0xC0:
+
+
     c = (val / dpowers[(unsigned char)prec]) % 10 + '0';
-# 1549 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\sources\\c90\\common\\doprnt.c"
+
+    break;
+
+
+
+
+
+   case 0x80:
+
+   {
+    unsigned char idx = (val / hexpowers[(unsigned char)prec]) & 0xF;
+
+    c = (flag & 0x20 ? "0123456789ABCDEF" : "0123456789abcdef")[idx];
+
+
+
+
+
    }
-   ((*sp++ = (c)));
+
+    break;
+
+
+
+
+
+   case 0x40:
+
+    c = ((val / octpowers[(unsigned char)prec]) & 07) + '0';
+
+    break;
+
+
+   }
+   (putch(c) );
   }
 
 
-
-
-
-
+  if((flag & 0x08) && width > 0)
+   do
+    (putch(' ') );
+   while(--width);
 
  }
 
 alldone:
 
 
- *sp = 0;
+
 
  return 0;
 }

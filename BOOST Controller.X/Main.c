@@ -1,6 +1,6 @@
 /*
  * File:   Main.c
- * Author: Muhammad
+ * Author: Wakil
  *
  * Created on January 22, 2022, 12:46 AM
  */
@@ -25,22 +25,34 @@
 #include <xc.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 #include "ADC/ADC.h"
-void main(void) {
+#include "UART/Uart.h"
+#include "LCD/LCD.h"
+
+void main(void) 
+{
     char Str[50];
     uint16_t SETPOINT  = 0;
     uint16_t FEEDBACK  = 0;
     TRISB = 0x00;
+    LCD_Initialize();
     ADC_Init();
+    UART_Init(9600);
     TRISC &=~ (1<<2);   // Configure PORTC as output(RC2-PWM1, RC1-PWM2)
-    CCP1CON = 0x0F; // Select the PWM mode.
-    PR2 = 255;      // Set the Cycle time to 255 for varying the duty cycle from 5-250
-    CCPR1L = 125;    // By default set the dutyCycle to 125  50%
-    TMR2ON = 1;     //Start the Timer for PWM generation
+    CCP1CON = 0x0F;     // Select the PWM mode.
+    PR2 = 255;          // Set the Cycle time to 255 for varying the duty cycle from 5-250
+    CCPR1L = 125;       // By default set the dutyCycle to 125  50%
+    TMR2ON = 1;         //Start the Timer for PWM generation
+    
+    memset(Str,0x00,50);
+    printf(Str,50,"SETPOINT = % 4d & FEEDBACK = % 4d\r\n",SETPOINT,FEEDBACK);
+    UART_Write_Text(Str);
+        
     while(1)
     {
         SETPOINT    = Read_ADC(0);
-        FEEDBACK    =  Read_ADC(1);  
+        FEEDBACK    =  Read_ADC(1);    
         if(SETPOINT > FEEDBACK)
         {
             if(CCPR1L < 250)
@@ -61,6 +73,6 @@ void main(void) {
         {
         }        
         __delay_ms(1);
-    }
+    } 
     return;
 }

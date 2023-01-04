@@ -1966,23 +1966,171 @@ extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 # 27 "Main.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\string.h" 1 3
+# 14 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\string.h" 3
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+# 36 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\string.h" 3
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+# 28 "Main.c" 2
+
 # 1 "./ADC/ADC.h" 1
 # 18 "./ADC/ADC.h"
 void ADC_Init();
 uint16_t Read_ADC(char channel);
-# 28 "Main.c" 2
+# 29 "Main.c" 2
 
-void main(void) {
+# 1 "./UART/Uart.h" 1
+# 19 "./UART/Uart.h"
+char UART_Init(const long int baudrate);
+void UART_Write(char data);
+char UART_TX_Empty();
+void UART_Write_Text(char *text);
+char UART_Data_Ready();
+char UART_Read();
+void UART_Read_Text(char *Output, unsigned int length);
+# 30 "Main.c" 2
+
+# 1 "./LCD/LCD.h" 1
+# 18 "./LCD/LCD.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdlib.h" 1 3
+
+
+
+
+
+
+typedef unsigned short wchar_t;
+
+
+
+
+
+
+
+typedef struct {
+ int rem;
+ int quot;
+} div_t;
+typedef struct {
+ unsigned rem;
+ unsigned quot;
+} udiv_t;
+typedef struct {
+ long quot;
+ long rem;
+} ldiv_t;
+typedef struct {
+ unsigned long quot;
+ unsigned long rem;
+} uldiv_t;
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdlib.h" 3
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+
+
+
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+
+
+
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+# 104 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdlib.h" 3
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+# 18 "./LCD/LCD.h" 2
+# 68 "./LCD/LCD.h"
+void LCD_Initialize(void);
+void LCDPutChar(char ch);
+void LCDPutCmd(char ch);
+void LCDPutStr(const char *);
+void LCDWriteNibble(char ch, char rs);
+void LCDGoto(char pos, char ln);
+# 31 "Main.c" 2
+
+
+void main(void)
+{
     char Str[50];
     uint16_t SETPOINT = 0;
     uint16_t FEEDBACK = 0;
     TRISB = 0x00;
+    LCD_Initialize();
     ADC_Init();
+    UART_Init(9600);
     TRISC &=~ (1<<2);
     CCP1CON = 0x0F;
     PR2 = 255;
     CCPR1L = 125;
     TMR2ON = 1;
+
+    memset(Str,0x00,50);
+    printf(Str,50,"SETPOINT = % 4d & FEEDBACK = % 4d\r\n",SETPOINT,FEEDBACK);
+    UART_Write_Text(Str);
+
     while(1)
     {
         SETPOINT = Read_ADC(0);
