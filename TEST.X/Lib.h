@@ -11,11 +11,13 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-
+    
+#define _XTAL_FREQ  8000000UL
+    
 #include <stdio.h>
 #include <string.h>
 #include <xc.h>
-#define _XTAL_FREQ  16000000UL
+    
 
 #ifdef	__cplusplus
 }

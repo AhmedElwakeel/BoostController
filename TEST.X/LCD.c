@@ -1,18 +1,33 @@
-#include <pic.h>
-
 #include "LCD.h"
 
+void DELAY_us(unsigned int us_count) 
+{
+    while (us_count != 0) 
+    {
+        us_count--;
+    }
+}
+void DELAY_ms(unsigned int ms_count) 
+{
+    while (ms_count != 0) 
+    {
+        DELAY_us(C_CountForOneMsDelay_U16); //DELAY_us is called to generate 1ms delay
+        ms_count--;
+    }
+}
 /* local function to generate delay */
 void LCD_Enable()
 {
     LcdControlBus |= (1<<LCD_EN);   // Generate a High-to-low pulse on EN pin
     __delay_ms(2);
     LcdControlBus &= ~(1<<LCD_EN); 
+    __delay_ms(2);
 }
 
 void LCD_Init()
 {
-    char Commands[7] = {0x28,0x33,0x32,0x06,0x0F,0x80};
+    char Commands[7] = {0x02,0x28,0x0E,0x01,0x80,0x80};
+    //char Commands[7] = {0x28,0x32,0x33,0x06,0x0F,0x80};
     int i = 0;
     
     LcdDataBusDirnReg = 0x00;  // Configure all the LCD pins as output

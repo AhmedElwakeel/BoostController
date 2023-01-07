@@ -25,7 +25,9 @@ extern "C" {
 #define LCD_RW     1
 #define LCD_EN     2
 
-
+#define C_CountForOneMsDelay_U16 120
+void DELAY_us(unsigned int us_count);
+void DELAY_ms(unsigned int ms_count);
 /* Function to send the command to LCD. 
    As it is 4bit mode, a byte of data is sent in two 4-bit nibbles */
 void Lcd_CmdWrite(char cmd); 
@@ -43,4 +45,3 @@ void LCD_Print(char* Str);
 #endif
 
 #endif	/* LCD_H */
-
